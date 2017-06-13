@@ -19,3 +19,13 @@ class Event:
     def title(self, title):
         self.__title = title
 
+    def __str__(self):
+        return "Title: {}; Description: {}".format(
+            self.title, self.description)
+
+    def __eq__(self, event):
+        if self.__title == event.title\
+                and self.__description == event.description:
+            return True
+        return False
+
