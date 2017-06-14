@@ -1,5 +1,5 @@
-from src.Controller import Controller
-from src.Model import Model
+from Controller import Controller
+from Model import Model
 
 if __name__ == "__main__":
     model = Model('savedata', result_dict[save_type_key])
