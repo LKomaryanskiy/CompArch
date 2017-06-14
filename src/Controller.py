@@ -1,13 +1,22 @@
-from View import View
+from src.View import View
+'''Implemenation of Controller class'''
 
 
 class Controller:
-    
+    ''' This class is responsible for connection with
+    bussiness logic and it represantation.
+    '''
 
     def __init__(self, main_model):
+        """ Initialize Model class
+        Args:
+            main_model(Model): The model stores the data
+            of the app
+        """
         self.model = main_model
 
     def start(self):
+        '''Main menu logic'''
         mode = 0
         View.main_menu()
 
@@ -34,6 +43,7 @@ class Controller:
                 View.main_menu()
 
     def create_event_manager(self):
+        '''Create event'''
         title = None
         description = None
         try:
@@ -53,6 +63,7 @@ class Controller:
         return
 
     def delete_event_manager(self):
+        ''' Delete event from library'''
         event_number = 0
         try:
             event_number = int(input("Enter event number: "))
