@@ -1,4 +1,11 @@
+"""Implementation of View class."""
+
+
 class View:
+    """This class is responsible for information output.
+    Class consists of static methods, due to the absence
+    of it initialization.
+    """
 
     @staticmethod
     def main_menu():
