@@ -1,8 +1,12 @@
+""" Module for serialization """
+
 import pickle
 import yaml
+import src.serialize.JsonSerialize as jsn
 
 pickle_type = "pickle"
 yaml_type = "yaml"
+json_type = "json"
 
 
 def load(file_obj, serialize_method):
