@@ -69,3 +69,8 @@ class Event:
             return True
         return False
 
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod(extraglobs={"b33r": Event("Title", "Description")})
+

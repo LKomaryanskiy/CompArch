@@ -1,5 +1,6 @@
 """ Implementation of Model class """
 
+import doctest
 import src.serialize.Serialize as srz
 from src.Event import Event
 from src.configuration.configParser\
@@ -117,3 +118,6 @@ class Model:
     def _show_list(self, lst):
         return [str(item) for item in lst]
 
+
+if __name__ == "__main__":
+    doctest.testmod(extraglobs={"model": Model("storage", "pickle")})
