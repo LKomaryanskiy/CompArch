@@ -6,6 +6,7 @@ from src.Event import Event
 from src.configuration.configParser\
     import last_session_data_save, last_session_save_type
 
+
 class Model:
     """ Class Model controls all operations on events.
 

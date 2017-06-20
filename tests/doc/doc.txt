@@ -1,0 +1,205 @@
+Help on module src.Event in src:
+
+NAME
+    src.Event - Implementation of Event class
+
+CLASSES
+    builtins.object
+        Event
+    
+    class Event(builtins.object)
+     |  Describes all properties of events schedule.
+     |  
+     |  Attributes:
+     |      title: Contains events title.
+     |      description: Contains event description.
+     |  
+     |  Methods defined here:
+     |  
+     |  __eq__(self, event)
+     |      Return self==value.
+     |  
+     |  __init__(self, title, description)
+     |      Initialize Event class.
+     |      
+     |      Args:
+     |          title(str): The title of event;
+     |          Can be an arbitrary sequence of characters.
+     |          description(str): Description of event.
+     |      
+     |      Examples:
+     |          >>> new_event = Event('New event', 'Drink b33r with ur buddys')
+     |          >>> new_event  #doctest: +ELLIPSIS
+     |          <__main__.Event object at 0x...>
+     |          >>> print(new_event)
+     |          Title: New event; Description: Drink b33r with ur buddys
+     |  
+     |  __str__(self)
+     |      Return str(self).
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |  
+     |  description
+     |      str: Contains description of a particular event
+     |      Examples:
+     |          >>> event.description
+     |          'Drink b33r with ur buddys'
+     |          >>> great_event.description = "Drink b33r with ur grandma"
+     |          >>> great_event.description
+     |          'Drink b33r with ur grandma'
+     |  
+     |  title
+     |      str: Contains a title of a particular event
+     |      Examples:
+     |          >>> event.title
+     |          'Main event'
+     |          >>> important_event.title = "Important event"
+     |          >>> important_event.title
+     |          'Important event'
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  __hash__ = None
+
+FILE
+    /home/ash/Documents/zamzam/lab3/src/Event.py
+
+
+Help on module src.Model in src:
+
+NAME
+    src.Model - Implementation of Model class
+
+CLASSES
+    builtins.object
+        Model
+    
+    class Model(builtins.object)
+     |  Class Model controls all operations on events.
+     |  
+     |  Attributes:
+     |      __events_list(list): List of events.
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, filename, serialization_type)
+     |      Initialize Model class
+     |      
+     |      Args:
+     |          filename(str): Set name of the file which is used to upload
+     |              information about schedule.
+     |  
+     |  create_event(self, title, description)
+     |      Method create_event creates event and adds it to the list.
+     |      
+     |      Args:
+     |          title(str): Title of event.
+     |          description(str): Description of event.
+     |      Raises:
+     |          Exception: if event with given title already exist.
+     |      
+     |      Examples:
+     |          >>> model.create_event("New event", "Do smth.")
+     |          >>> model._show_list(model.event_list)
+     |          [Title: 'New event', Description: 'Do smth.': ']
+     |          >>> model.create_event("New event", "Do smth else.")
+     |          Traceback (most recent call last):
+     |          Exception: [ERROR]::The event already exists.
+     |  
+     |  load(self)
+     |      Load information about events
+     |      
+     |      Args:
+     |          filename(str): Set name of the file which is used to upload
+     |              information about events.
+     |  
+     |  remove_event(self, title)
+     |      Removes an event from events list.
+     |      
+     |      Args:
+     |          title(str): The title of the deleted event.
+     |      Raises:
+     |          Exception: if event with given title does not exist.
+     |      
+     |      Examples:
+     |          >>> model.remove_event("Old event")
+     |          Traceback (most recent call last):
+     |          Exception: [ERROR]::There is no event with such title.
+     |          >>> model.remove_event("New event")
+     |          >>> model._show_list(model.events_list)
+     |          []
+     |  
+     |  save(self)
+     |      Save information about events in text file.
+     |      
+     |      Args:
+     |          filename(str): Set name of the file which is used to upload
+     |              information about events.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |  
+     |  events_list
+     |      list: Contains the list of events.
+
+FILE
+    /home/ash/Documents/zamzam/lab3/src/Model.py
+
+
+Help on module src.Controller in src:
+
+NAME
+    src.Controller
+
+CLASSES
+    builtins.object
+        Controller
+    
+    class Controller(builtins.object)
+     |  This class is responsible for connection with
+     |  bussiness logic and it represantation.
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, main_model)
+     |      Initialize Model class
+     |      Args:
+     |          main_model(Model): The model stores the data
+     |          of the app
+     |  
+     |  create_event_manager(self)
+     |      Create event
+     |  
+     |  delete_event_manager(self)
+     |      Delete event from library
+     |  
+     |  start(self)
+     |      Main menu logic
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+FILE
+    /home/ash/Documents/zamzam/lab3/src/Controller.py
+
+

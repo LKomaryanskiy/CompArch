@@ -41,6 +41,7 @@ class Controller:
                 View.exit_message()
             elif mode not in range(1, 4):
                 View.main_menu()
+        self.model.save()
 
     def create_event_manager(self):
         '''Create event'''
